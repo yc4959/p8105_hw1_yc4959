@@ -17,10 +17,11 @@ Load the penguins dataset
 data("penguins", package = "palmerpenguins")
 ```
 
-The penguins dataset contains some penguin species. Important variables include species, island, bill_length_mm, flipper_length_mm, and body_mass_g. The size of dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns. 
+The penguins dataset contains some penguin information. Important variables include species, island, including bill length (mm), bill depth (mm), flipper length (mm), body mass, sex and year. The size of dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns. 
 The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.
 
-```{r }
+
+```{r scatterplot}
 
 ```
 ## Problem 2
