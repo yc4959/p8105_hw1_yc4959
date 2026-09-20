@@ -2,7 +2,7 @@
 title: "p8105_hw1_yc4959"
 author: "Yimeng Cao"
 date: "2026-09-20"
-output: html_document
+output: github_document
 ---
 This is an R markdown document for 8105 homework 1.
 
@@ -12,11 +12,17 @@ library(tidyverse)
 
 ## Probelm 1
 
-
-```{r}
-
+Load the penguins dataset
+```{r load data}
+data("penguins", package = "palmerpenguins")
 ```
 
+The penguins dataset contains some penguin species. Important variables include species, island, bill_length_mm, flipper_length_mm, and body_mass_g. The size of dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns. 
+The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.
+
+```{r }
+
+```
 ## Problem 2
 
 
