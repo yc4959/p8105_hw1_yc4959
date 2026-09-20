@@ -20,7 +20,7 @@ data("penguins", package = "palmerpenguins")
 The penguins dataset contains some penguin information. Important variables include species, island, bill length (mm), bill depth (mm), flipper length (mm), body mass (g), sex and year. The size of dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns. 
 The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.
 
-Scatter plot of flipper length vs bill length.
+Create scatter plot of flipper length vs bill length.
 ```{r scatterplot}
 penguins %>%
   ggplot(aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
@@ -33,8 +33,19 @@ ggsave("penguin_plot.png")
 
 ## Problem 2
 
+Create a data frame call data_frame：
+a random sample of size 10 from a standard Normal distribution
+a logical vector indicating whether elements of the sample are greater than 0
+a character vector of length 10
+a factor vector of length 10, with 3 different factor “levels”
 
-```{r}
-
+```{r Create a data frame}
+data_frame = tibble(
+  norm_samp = rnorm(10),
+  vec_logical = norm_samp > 0,
+  vec_character = c("y", "i", "m", "e", "n", "g", "1", "c", "a", "o"),
+  vec_factor = factor(c("small", "small", "medium", "medium", "medium", "medium", "medium", "large", "large", "large"))
+)
 ```
+
 
