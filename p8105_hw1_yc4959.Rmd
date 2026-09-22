@@ -17,7 +17,7 @@ Load the penguins dataset
 data("penguins", package = "palmerpenguins")
 ```
 
-The penguins dataset contains some penguin information. Important variables include species, island, bill length (mm), bill depth (mm), flipper length (mm), body mass (g), sex and year. The size of dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns. 
+The penguins dataset contains some penguin information. Important variables include species(Adelie, Chinstrap, and Gentoo), island, bill length (mm), bill depth (mm), flipper length (mm), body mass (g), sex and year. The size of dataset has `r nrow(penguins)` rows and `r ncol(penguins)` columns. 
 The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm.
 
 Create scatter plot of flipper length vs bill length.
@@ -43,13 +43,13 @@ a factor vector of length 10, with 3 different factor “levels”
 data_frame = tibble(
   norm_samp = rnorm(10),
   vec_logical = norm_samp > 0,
-  vec_character = c("y", "i", "m", "e", "n", "g", "1", "c", "a", "o"),
+  vec_character = c("y", "i", "m", "e", "n", "g", "c", "c", "a", "o"),
   vec_factor = factor(c("small", "small", "medium", "medium", "medium", "medium", "medium", "large", "large", "large"))
 )
 ```
 
-Try to take the mean of each variable in your data frame.
 
+Try to take the mean of each variable in your data frame.
 ```{r Try mean}
 mean(pull(data_frame, norm_samp))
 mean(pull(data_frame, vec_logical))
@@ -59,3 +59,15 @@ mean(pull(data_frame, vec_factor))
 The numeric variable and logical vector can have means, but the 
 character and factor vectors cannot have means because they represent 
 text and categories.
+
+
+Try to convert variables
+```{r, results = "hide"}
+as.numeric(pull(data_frame, vec_logical))
+as.numeric(pull(data_frame, vec_character))
+as.numeric(pull(data_frame, vec_factor))
+```
+The logical variable is converted to 0 and 1, and its can be calculated.
+The character variable cannot be directly converted to numeric values.
+The factor variable converted to numeric codes based on its level.
+This explain why only numeric and logical variables can have a mean.
