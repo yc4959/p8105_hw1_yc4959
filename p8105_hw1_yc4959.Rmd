@@ -48,4 +48,14 @@ data_frame = tibble(
 )
 ```
 
+Try to take the mean of each variable in your data frame.
 
+```{r Try mean}
+mean(pull(data_frame, norm_samp))
+mean(pull(data_frame, vec_logical))
+mean(pull(data_frame, vec_character))
+mean(pull(data_frame, vec_factor))
+```
+The numeric variable and logical vector can have means, but the 
+character and factor vectors cannot have means because they represent 
+text and categories.
