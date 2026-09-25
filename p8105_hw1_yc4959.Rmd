@@ -10,7 +10,7 @@ This is an R markdown document for 8105 homework 1.
 library(tidyverse)
 ```
 
-## Probelm 1
+## Problem 1
 
 Load the penguins dataset
 ```{r load data}
@@ -22,10 +22,13 @@ The mean flipper length is `r mean(penguins$flipper_length_mm, na.rm = TRUE)` mm
 
 Create scatter plot of flipper length vs bill length.
 ```{r scatterplot}
-penguins %>%
-  ggplot(aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+penguins %>% 
+  drop_na() %>% 
+  ggplot(aes(y = flipper_length_mm, x = bill_length_mm, color=species)) +
   geom_point()
 ```
+There are 2 missing values automatically dropped.
+
 Save the plot
 ```{r save plot}
 ggsave("penguin_plot.png")
@@ -67,7 +70,7 @@ as.numeric(pull(data_frame, vec_logical))
 as.numeric(pull(data_frame, vec_character))
 as.numeric(pull(data_frame, vec_factor))
 ```
-The logical variable is converted to 0 and 1, and its can be calculated.
+The logical variable is converted to 0 and 1, and its mean can be calculated.
 The character variable cannot be directly converted to numeric values.
 The factor variable converted to numeric codes based on its level.
 This explain why only numeric and logical variables can have a mean.
