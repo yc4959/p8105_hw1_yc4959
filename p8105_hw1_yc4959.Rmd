@@ -71,4 +71,4 @@ as.numeric(pull(data_frame, vec_factor))
 The logical variable is converted to 0 and 1, and its mean can be calculated.
 The character variable cannot be directly converted to numeric values.
 The factor variable converted to numeric codes based on its level.
-This explains why only numeric and logical variables can have a mean.
+This explains why only numeric and logical variables can have a mean.aaa
